@@ -1,10 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXNUM 1000
-
-int main()
+int main(int argc, char *argv[])
 {
+	int MAXNUM;
+	if (argc == 1) 
+		MAXNUM = 100000;
+	else if (argc == 2)
+		MAXNUM = atoi(argv[1]);
+	else {
+		printf("error: too much arguments\n");
+		exit(-1);
+	}
+
+	printf("%d\n", MAXNUM);
+
 	FILE *fp;
 	int i, enter = 0;
 	int len, num;
@@ -18,7 +28,8 @@ int main()
 	char strNum[len];
 	
 	if ((fp = fopen("randomNum.h", "w")) != NULL) {
-		fprintf(fp, "#define MAXNUM 1000\n");
+		sprintf(strNum, "%d", MAXNUM);
+		fprintf(fp, "#define MAXNUM %s\n", strNum);
 		fprintf(fp, "int randomNum[MAXNUM] = {\n");
 		for (i = 0; i < MAXNUM - 1; i++) {
 			if (enter == 10) {
@@ -35,5 +46,4 @@ int main()
 	}
 	fclose(fp);
 	return 0;
-
 }
