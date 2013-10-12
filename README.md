@@ -6,7 +6,7 @@ I know this is a very long and hard way, so be a fighter and god bless me. Actua
 
 ## test
 
-You can input *make test* to test the algorithm. Now you just can test the insert sort algorithm. The testing time may be a little long, you can change the data scale through the *test.sh*. After testing, you can see the picture like this:
+You can input *make test* to test the algorithm. Some testing time may be a little long, you can change the data scale through the *test.sh*. After testing, you can see the picture like this:
 
 ![plot](https://raw.github.com/Liuyu314/algorithm4Liu/master/plot.png)
 
