@@ -1,0 +1,6 @@
+Mon Oct  7 22:04 2013  Yu Liu (yuliu314@gmail.com)
+
+	create a directory named "sort" and put all the sort algorithms into it
+	src/heapSort.c added
+	simplified the Makefile and add the part of heapSort
+	ChangeLog added

@@ -6,3 +6,7 @@ randomNum.h
 
 insertSort
 mergeSort
+bubbleSort
+heapSort
+
+.DS_Store
