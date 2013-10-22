@@ -2,9 +2,4 @@ data*
 
 genRandomNum
 
-insertSort
-mergeSort
-bubbleSort
-heapSort
-
 .DS_Store
