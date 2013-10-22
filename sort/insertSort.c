@@ -28,9 +28,6 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < maxnum; i++)
 		fscanf(fp, "%d", &randomNum[i]);
-	for (i = 0; i < maxnum; i++)
-		printf("%d ", randomNum[i]);
-	putchar('\n');
 
 	start = clock();
 	for (j = 1; j < maxnum; j++) {
@@ -53,5 +50,7 @@ int main(int argc, char *argv[])
 	end = clock();
 	cost_time = (double) (end - start) / CLOCKS_PER_SEC;
 	printf("%f,%d\n", cost_time, maxnum);
+
+	fclose(fp);
 	return 0;
 }

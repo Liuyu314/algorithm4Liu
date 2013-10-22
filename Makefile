@@ -27,8 +27,7 @@ mergeSort: $(SORT)/mergeSort.c
 heapSort: $(SORT)/heapSort.c 
 	$(CC) $^ -o $(BIN)/$@
 
-# Testing
-
+# Testing: you need to choose the number scale(NumLen) which in the test.sh
 
 test_insertSort:
 	./test.sh insertSort
@@ -36,8 +35,12 @@ test_insertSort:
 test_mergeSort:
 	./test.sh mergeSort
 
+test_heapSort:
+	./test.sh heapSort
+
 # Clean
 
 clean:
-	-rm -rf *.o 
+	-rm *.o 
 	-rm $(BIN)/*
+	-rm data* 

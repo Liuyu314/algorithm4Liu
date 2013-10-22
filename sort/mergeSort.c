@@ -73,6 +73,7 @@ int main(int argc, char *argv[])
 	cost_time = (double) (end - start) / CLOCKS_PER_SEC;
 	printf("%f,%d\n", cost_time, maxnum);
 	
+	fclose(fp);
 	/*	
 	for (i = 0; i < maxnum; i++)
 		printf("%d ", randomNum[i]);

@@ -95,6 +95,8 @@ int main(int argc, char *argv[])
 	end = clock();
 	cost_time = (double) (end - start) / CLOCKS_PER_SEC;
 	printf("%f,%d\n", cost_time, maxnum);
+
+	fclose(fp);
 	
 	/*
 	for (i = 0; i < maxnum; i++)
