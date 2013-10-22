@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 	
 	if ((fp = fopen(argv[2], "w")) != NULL) {
 		sprintf(strNum, "%d", MAXNUM);
-		fprintf(fp, "# MAXNUM %s \n", strNum);
+		fprintf(fp, "#MAXNUM %s \n", strNum);
 		for (i = 0; i < MAXNUM - 1; i++) {
 			sprintf(strNum, "%d", rand() % MAXNUM);
-			fprintf(fp, "%s, ", strNum);
+			fprintf(fp, "%s ", strNum);
 		}
 		sprintf(strNum, "%d", rand() % MAXNUM);
 		fprintf(fp, "%s", strNum);

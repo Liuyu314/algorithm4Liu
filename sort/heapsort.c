@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int parent(i)
 {
@@ -41,18 +43,18 @@ void build_max_heapify(int arr[], int heap_size)
 {
 	int i;
 
-	for (i = (10 - 1) / 2; i >= 0; i--) 
+	for (i = (heap_size - 1) / 2; i >= 0; i--) 
 		max_heapify(arr, i, heap_size);
 }
 
-void heapsort(int arr[])
+void heap_sort(int arr[], int max)
 {
 	int i, swap;
-	int heap_size = 10;
+	int heap_size = max;
 
 	build_max_heapify(arr, heap_size);
 	
-	for (i = 9; i >= 0; i--) {
+	for (i = max - 1; i >= 0; i--) {
 		swap = arr[0];
 		arr[0] = arr[i];
 		arr[i] = swap;
@@ -62,13 +64,43 @@ void heapsort(int arr[])
 	
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
 	int i;
-	int arr[10] = {4, 1, 3, 2, 16, 9, 10, 14, 8 ,7};
+	FILE *fp;
 
-	heapsort(arr);
-	for (i = 0; i < 10; i++)
-		printf("%d ", arr[i]);
+	clock_t start, end;
+	double cost_time;
+	if (argc != 2) {
+		printf("Wrong argument!\n");
+		exit(1);
+	}
+
+	if (NULL == (fp = fopen(argv[1], "r"))) {
+		printf("Cannot open the file %s!\n", argv[1]);
+		exit(1);
+	}
+	char label[10];
+	int maxnum;
+
+	fscanf(fp, "%s %d", label, &maxnum);
+	
+	int randomNum[maxnum];
+
+	for (i = 0; i < maxnum; i++)
+		fscanf(fp, "%d", &randomNum[i]);
+	
+	start = clock();
+	heap_sort(randomNum, maxnum);
+	end = clock();
+	cost_time = (double) (end - start) / CLOCKS_PER_SEC;
+	printf("%f,%d\n", cost_time, maxnum);
+	
+	/*
+	for (i = 0; i < maxnum; i++)
+		printf("%d ", randomNum[i]);
+	putchar('\n');
+	*/
+
 	return 0;
 }
