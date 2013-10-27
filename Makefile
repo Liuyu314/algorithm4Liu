@@ -27,6 +27,12 @@ mergeSort: $(SORT)/mergeSort.c
 heapSort: $(SORT)/heapSort.c 
 	$(CC) $^ -o $(BIN)/$@
 
+quickSort: $(SORT)/quickSort.c
+	$(CC) $^ -o $(BIN)/$@
+
+bubbleSort: $(SORT)/bubbleSort.c
+	$(CC) $^ -o $(BIN)/$@
+
 # Testing: you need to choose the number scale(NumLen) which in the test.sh
 
 test_insertSort:
@@ -38,6 +44,11 @@ test_mergeSort:
 test_heapSort:
 	./test.sh heapSort
 
+test_quickSort:
+	./test.sh quickSort
+
+test_bubbleSort:
+	./test.sh bubbleSort
 # Clean
 
 clean:
