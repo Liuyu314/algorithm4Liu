@@ -32,6 +32,9 @@ quickSort: $(SORT)/quickSort.c
 
 bubbleSort: $(SORT)/bubbleSort.c
 	$(CC) $^ -o $(BIN)/$@
+	
+countingSort: $(SORT)/countingSort.c
+	$(CC) $^ -o $(BIN)/$@
 
 # Testing: you need to choose the number scale(NumLen) which in the test.sh
 
@@ -49,6 +52,10 @@ test_quickSort:
 
 test_bubbleSort:
 	./test.sh bubbleSort
+
+test_countingSort:
+	./test.sh countingSort
+
 # Clean
 
 clean:

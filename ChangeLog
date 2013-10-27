@@ -16,4 +16,5 @@ Mon Oct 27 14:50 2013  Yu Liu (yuliu314@gmail.com)
 
 	sort/quickSort.c: read the random number from file and sort them
 	sort/bubbleSort.c: read the random number from file and sort them
-	Makefile: add quickSort and bubbleSort
+	sort/countingSort.c: read the random number from file and sort them 
+	Makefile: add quickSort bubbleSort and countingSort
