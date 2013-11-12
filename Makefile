@@ -3,6 +3,7 @@
 ROOT = .
 BIN  = $(ROOT)/bin
 SORT = $(ROOT)/sort
+DATA = $(ROOT)/datastructure
 
 # Compiler
 
@@ -36,6 +37,9 @@ bubbleSort: $(SORT)/bubbleSort.c
 countingSort: $(SORT)/countingSort.c
 	$(CC) $^ -o $(BIN)/$@
 
+stack: $(DATA)/stack.c
+	$(CC) $^ -o $(BIN)/$@
+
 # Testing: you need to choose the number scale(NumLen) which in the test.sh
 
 test_insertSort:
@@ -55,6 +59,9 @@ test_bubbleSort:
 
 test_countingSort:
 	./test.sh countingSort
+
+test_stack:
+	./$(BIN)/stack
 
 # Clean
 

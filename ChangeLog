@@ -18,3 +18,8 @@ Mon Oct 27 14:50 2013  Yu Liu (yuliu314@gmail.com)
 	sort/bubbleSort.c: read the random number from file and sort them
 	sort/countingSort.c: read the random number from file and sort them 
 	Makefile: add quickSort bubbleSort and countingSort
+
+Tue Nov 12 22:15 2013  Yu Liu (yuliu314@gmail.com)
+
+	datastructure/stack.c: realize the stack data structure.
+	Makefile: add stack and test_stack
